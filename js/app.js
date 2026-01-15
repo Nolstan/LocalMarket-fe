@@ -44,10 +44,14 @@ let allProducts = [];
 
 //  Fetch  products from the backend
 
-async function loadProducts() {
+async function loadProducts(search = '', location = '') {
     try {
-        loadStats(); // Call stats loading as well
-        const response = await fetch(`${API_URL}/products`);
+        loadStats();
+        let url = `${API_URL}/products?`;
+        if (search) url += `search=${encodeURIComponent(search)}&`;
+        if (location) url += `location=${encodeURIComponent(location)}&`;
+
+        const response = await fetch(url);
 
         if (!response.ok) {
             throw new Error('Failed to fetch products');
@@ -56,19 +60,6 @@ async function loadProducts() {
         const data = await response.json();
         allProducts = data.data;
         renderProducts(allProducts);
-
-        // Add search event listener
-        const searchInput = document.getElementById('searchInput');
-        if (searchInput) {
-            searchInput.addEventListener('input', (e) => {
-                const term = e.target.value.toLowerCase();
-                const filtered = allProducts.filter(p =>
-                    p.name.toLowerCase().includes(term) ||
-                    (p.businessId?.ownerName || '').toLowerCase().includes(term)
-                );
-                renderProducts(filtered);
-            });
-        }
     } catch (error) {
         console.error('Error loading products:', error);
         productGrid.innerHTML = `
@@ -76,6 +67,39 @@ async function loadProducts() {
                 Unable to load products. <br>
                 <small>either database is disconnected or the server is down.</small>
             </div>`;
+    }
+}
+
+// Add event listeners for search and location
+function setupFilters() {
+    const searchInput = document.getElementById('searchInput');
+    const locationFilter = document.getElementById('locationFilter');
+    const searchBtn = document.getElementById('searchBtn');
+
+    const triggerSearch = () => {
+        const searchTerm = searchInput ? searchInput.value : '';
+        const locationTerm = locationFilter ? locationFilter.value : '';
+        loadProducts(searchTerm, locationTerm);
+    };
+
+    if (searchBtn) {
+        searchBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            triggerSearch();
+        });
+    }
+
+    if (locationFilter) {
+        locationFilter.addEventListener('change', triggerSearch);
+    }
+
+    // Optional: Real-time search with debounce or on Enter key
+    if (searchInput) {
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                triggerSearch();
+            }
+        });
     }
 }
 
@@ -104,4 +128,7 @@ function renderProducts(products) {
 }
 
 // Initialize
-window.addEventListener('DOMContentLoaded', loadProducts);
+window.addEventListener('DOMContentLoaded', () => {
+    loadProducts();
+    setupFilters();
+});
