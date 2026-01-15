@@ -40,7 +40,7 @@ if (registerForm) {
                 localStorage.setItem('businessName', data.data.businessName);
 
                 setTimeout(() => {
-                    window.location.href = 'dashboard.html';
+                    window.location.href = 'Dashboard.html';
                 }, 1000);
             } else {
                 registerMessage.innerHTML = `<div class="error">${data.error || 'Failed to create shop'}</div>`;
