@@ -42,6 +42,13 @@
             top: 0;
             left: 0;
             bottom: 0;
+            z-index: 1100;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .admin-sidebar.mobile-active {
+            transform: translateX(0) !important;
         }
 
         .admin-sidebar-header {
