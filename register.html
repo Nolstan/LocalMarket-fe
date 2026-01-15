@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Your Business | Local Marketplace</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/register-styles.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo" onclick="window.location.href='index.html'" style="cursor: pointer;">
+                <span class="logo-icon"><i class="fas fa-shopping-bag"></i></span>
+                Local<span>Market</span>
+            </h1>
+            <div class="nav-links">
+                <a href="index.html">Gulani</a>
+                <a href="login.html">Shopu yanu</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="auth-section">
+            <div class="auth-card">
+                <div class="auth-header">
+                    <h2>Join the <span>Marketplace.</span></h2>
+                    <p>Tsegulani shopu yanu kuti mufikile makasitolama anu ambiri.</p>
+                </div>
+
+                <form id="registerForm" class="auth-form">
+                    <div class="form-group">
+                        <label for="businessName">Lowetsani Dzina la shopu yanu</label>
+                        <input type="text" id="businessName" placeholder="e.g. Electronics Shop, Hostels Shop" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="ownerName">Lowetsani dzina lanu</label>
+                        <input type="text" id="ownerName" placeholder="Mick, Nico Robin" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Lowetsani email yanu</label>
+                        <input type="email" id="email" placeholder="eg lkumwenda@gmail.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">sankhani Password yanu</label>
+                        <input type="password" id="password" placeholder="isachepele mau 8" required minlength="6">
+                    </div>
+                    <div class="form-group">
+                        <label for="location">Bizinesi muzipangira kuti?</label>
+                        <input type="text" id="location" placeholder="eg, Mzuzu, Luwinga / Mubas-Kapeni-B 304" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactInfo">Lowetsani Nambala phone yanu</label>
+                        <textarea id="contactInfo" placeholder="eg 0981353135" required></textarea>
+                    </div>
+                    <button type="submit" id="registerBtn" class="btn-submit">Malizitsani</button>
+                    <div id="registerMessage" class="form-message"></div>
+                </form>
+
+                <div class="auth-divider">OR</div>
+
+                <div class="login-footer">
+                    <p>Mulind akaunti kale? <a href="login.html">Lowani apa</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 NET(NotEvenThat) dev. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/config.js"></script>
+    <script src="js/register.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace | Local Businesses</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/businesses-styles.css">
+</head>
+
+<body class="products-page">
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon"><i class="fas fa-shopping-bag"></i></span>
+                Local<span>Market</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="businesses.html" class="active">Businesses</a>
+                <a href="login.html" class="btn-login">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="products-hero">
+        <div class="hero-content">
+            <h1>Meet Your Local Partners</h1>
+            <p>Make Partnership with Local Business owners.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div id="loading" class="loading-spinner">
+            <div class="spinner"></div>
+            <p>Loading businesses...</p>
+        </div>
+
+        <div id="businessGrid" class="business-grid">
+            <!-- Businesses products will be place here -->
+        </div>
+
+        <div id="noBusinesses" class="no-products hidden">
+            <i class="fas fa-store-slash"></i>
+            <h3>No businesses found</h3>
+            <p>We're working on adding more local partners.</p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 (NET) dev. All rights reserved.</p>
+    </footer>
+
+    <script src="js/config.js"></script>
+    <script src="js/businesses.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owner Login | Local Marketplace</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/login-styles.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo" onclick="window.location.href='index.html'" style="cursor: pointer;">
+                <span class="logo-icon"><i class="fas fa-shopping-bag"></i></span>
+                Local<span>Market</span>
+            </h1>
+            <div class="nav-links">
+                <a href="index.html">Gulani</a>
+                <a href="login.html" class="active">Shopuyanu</a>
+                <a href="register.html">Tsegulani</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="auth-section">
+            <div class="auth-card">
+                <div class="auth-header">
+                    <h2>Takulandilani <span>😊!</span></h2>
+                    <p>Lowetsani Bizinesi Email yanu ndi Password yake kuti mulowe mu shopu yanu</p>
+                </div>
+
+                <form id="loginForm" class="auth-form">
+                    <div class="form-group">
+                        <label for="loginEmail">Bizinesi Email yanu</label>
+                        <input type="email" id="loginEmail" placeholder="lkumwenda@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Password yanu</label>
+                        <input type="password" id="loginPassword" placeholder="••••••••" required>
+                    </div>
+                    <button type="submit" id="loginBtn" class="btn-submit">Lowani mu Shopu yanu</button>
+                    <div id="loginMessage" class="form-message"></div>
+                </form>
+
+                <div class="auth-divider">OR</div>
+
+                <div class="login-footer">
+                    <p>Mulibe Akaunti? <a href="register.html">Pangani Akaunti yanu</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 NET(NotEvenThat) dev. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/config.js"></script>
+    <script src="js/login.js"></script>
+</body>
+
+</html>

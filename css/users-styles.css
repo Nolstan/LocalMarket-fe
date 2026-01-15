@@ -1,0 +1,146 @@
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Segoe UI', Tahoma, sans-serif;
+        background: #f4f6f8;
+        color: #2d3748;
+        min-height: 100vh;
+    }
+
+    /* Container */
+    .container {
+        max-width: 1200px;
+        margin: 3rem auto;
+        padding: 2rem;
+        background: #ffffff;
+        border-radius: 14px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Page Title */
+    .container h1 {
+        font-size: 1.9rem;
+        font-weight: 700;
+        margin-bottom: 1.8rem;
+        color: #1a202c;
+    }
+
+    /* Table */
+    .product-table {
+        width: 100%;
+        border-collapse: collapse;
+        overflow: hidden;
+        border-radius: 12px;
+    }
+
+    /* Table Head */
+    .product-table thead {
+        background: linear-gradient(135deg, #2563eb, #1e40af);
+    }
+
+    .product-table th {
+        padding: 1rem;
+        text-align: left;
+        font-size: 0.85rem;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: #ffffff;
+        font-weight: 600;
+    }
+
+    /* Table Body */
+    .product-table tbody tr {
+        transition: background 0.2s ease;
+    }
+
+    .product-table tbody tr:nth-child(even) {
+        background: #f8fafc;
+    }
+
+    .product-table tbody tr:hover {
+        background: #edf2f7;
+    }
+
+    /* Table Cells */
+    .product-table td {
+        padding: 0.9rem 1rem;
+        font-size: 0.95rem;
+        border-bottom: 1px solid #e2e8f0;
+        vertical-align: middle;
+    }
+
+    /* Status Styling */
+    .product-table td:nth-child(6) {
+        font-weight: 600;
+    }
+
+    .product-table td:nth-child(6)::before {
+        content: '●';
+        margin-right: 6px;
+        font-size: 0.7rem;
+    }
+
+    /* Example status colors (backend can inject text) */
+    .product-table td:nth-child(6):contains("Active") {
+        color: #16a34a;
+    }
+
+    .product-table td:nth-child(6):contains("Pending") {
+        color: #d97706;
+    }
+
+    .product-table td:nth-child(6):contains("Blocked") {
+        color: #dc2626;
+    }
+
+    /* Actions Column */
+    .product-table td:last-child {
+        white-space: nowrap;
+    }
+
+    /* Action Buttons */
+    .product-table td:last-child button,
+    .product-table td:last-child a {
+        padding: 0.4rem 0.7rem;
+        border-radius: 6px;
+        font-size: 0.8rem;
+        border: none;
+        cursor: pointer;
+        text-decoration: none;
+        margin-right: 5px;
+        transition: all 0.2s ease;
+    }
+
+    /* Loader */
+    .loader {
+        text-align: center;
+        padding: 2rem;
+        font-size: 1rem;
+        color: #64748b;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+        .container {
+            padding: 1.5rem;
+        }
+
+        .product-table th,
+        .product-table td {
+            padding: 0.7rem;
+            font-size: 0.85rem;
+        }
+    }
+
+    @media (max-width: 650px) {
+        .product-table {
+            display: block;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+    }

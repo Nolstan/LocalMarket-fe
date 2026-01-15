@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details | StoreSync</title>
+    <!-- <link rel="stylesheet" href="style.css">-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/product-details-styles.css">
+</head>
+
+<body class="details-page">
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon"><i class="fas fa-shopping-bag"></i></span>
+                Local<span>Market</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Gulani</a>
+                <!-- <a href="businesses.html">Businesses</a> -->
+                <a href="login.html" class="btn-login">Gulitsani</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div id="loading" class="loading-spinner">
+            <div class="spinner"></div>
+            <p>Dikilani pangono ...</p>
+        </div>
+
+        <div id="productDetails" class="product-details-container hidden">
+            <div class="details-grid">
+                <div class="details-image-section">
+                    <img id="productImage" src="" alt="Product Image">
+                    <div id="productCategory" class="details-badge">Category</div>
+                </div>
+                <div class="details-info-section">
+                    <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Bwelerani</a>
+                    <h1 id="productName" class="details-title">Product Name</h1>
+                    <div class="details-owner">
+                        <i class="fas fa-user-circle"></i>
+                        <div>
+                            <span class="owner-label">Katundu wa</span>
+                            <span id="ownerName" class="owner-value">Mwini wake</span>
+                        </div>
+                    </div>
+
+                    <div class="details-price-tag">
+                        <span class="price-label">Mtengo</span>
+                        <span id="productPrice" class="price-value">MWK 0</span>
+                    </div>
+
+                    <div class="details-description">
+                        <h3>Mvetsetsani</h3>
+                        <p id="productDescription">Full product description goes here...</p>
+                    </div>
+
+                    <div class="details-actions">
+                        <button id="placeOrderBtn" class="btn-primary"><i class="fas fa-shopping-cart"></i> Tumizani
+                            Order</button>
+                        <div id="orderStatusMessage"></div>
+                    </div>
+
+                    <!-- Ordering section -->
+                    <div id="orderModal" class="modal-overlay hidden">
+                        <div class="modal-content">
+                            <button id="closeModalBtn" class="modal-close-btn">&times;</button>
+                            <h3>Tumizani Order yanu</h3>
+                            <p>Lowetsani Nambala yanu. Muyimbilidwa phone posachedwa.</p>
+                            <form id="orderForm">
+                                <div class="form-group">
+                                    <label for="customerPhone">Foni Nambala (e.g., 099.../088...)</label>
+                                    <input type="tel" id="customerPhone" placeholder="Lowetsani pano" required>
+                                </div>
+                                <div id="orderStatus"></div>
+                                <button type="submit" class="btn-primary">Tumizani</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="business-card">
+                        <div class="business-info">
+                            <h4 id="businessName">Business Name</h4>
+                            <p id="businessLocation"><i class="fas fa-map-marker-alt"></i> Location</p>
+                            <p id="businessContact"><i class="fas fa-phone"></i> Contact Info</p>
+                            <p id="businessBio" class="business-bio">Business bio goes here...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="error" class="error-view hidden">
+            <i class="fas fa-exclamation-circle"></i>
+            <h3>Pepani! Katunduwu Sunapezeke</h3>
+            <p>Ndizotheka kuti mwini wake wa malonda wamuchotsa.</p>
+            <a href="index.html" class="btn-primary">Bwelerani</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 NET(NotEvenThat) dev. All rights reserved.</p>
+    </footer>
+
+    <script src="js/config.js"></script>
+    <script src="js/product-details.js"></script>
+</body>
+
+</html>

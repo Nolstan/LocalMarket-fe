@@ -1,0 +1,208 @@
+:root {
+    --primary: #4f46e5;
+    --primary-dark: #3730a3;
+    --bg-main: #f8fafc;
+    --bg-card: #ffffff;
+    --text-main: #1f2937;
+    --text-muted: #6b7280;
+    --border: #e5e7eb;
+}
+
+/* Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body.products-page {
+    font-family: 'Outfit', sans-serif;
+    background: var(--bg-main);
+    color: var(--text-main);
+    min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+    background: #ffffff;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--text-main);
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.logo-icon {
+    margin-right: 0.4rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.4rem;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--primary);
+}
+
+.btn-login {
+    padding: 0.45rem 1rem;
+    border-radius: 999px;
+    background: var(--primary);
+    color: #ffffff !important;
+    font-size: 0.85rem;
+}
+
+/* Hero */
+.products-hero {
+    background: linear-gradient(135deg, #6366f1, #4f46e5);
+    color: #ffffff;
+    padding: 4.5rem 1.5rem;
+    text-align: center;
+}
+
+.products-hero h1 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+}
+
+.products-hero p {
+    font-size: 1.05rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: auto;
+}
+
+/* Main Container */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 3rem 1.5rem;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+    text-align: center;
+    padding: 3rem 0;
+    color: var(--text-muted);
+}
+
+.spinner {
+    width: 42px;
+    height: 42px;
+    border: 4px solid var(--border);
+    border-top-color: var(--primary);
+    border-radius: 50%;
+    margin: auto;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Business Grid */
+.business-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 2rem;
+}
+
+/* Business Card (JS injected) */
+.business-grid>div {
+    background: var(--bg-card);
+    border-radius: 16px;
+    padding: 1.6rem;
+    border: 1px solid var(--border);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.business-grid>div:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* Generic content styling inside cards */
+.business-grid h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.4rem;
+}
+
+.business-grid p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 0.6rem;
+}
+
+/* Empty State */
+.no-products {
+    text-align: center;
+    padding: 4rem 1rem;
+    color: var(--text-muted);
+}
+
+.no-products i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #c7d2fe;
+}
+
+.no-products h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.4rem;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 1.5rem;
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    background: #ffffff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .products-hero h1 {
+        font-size: 1.9rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+    }
+}

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Dashboard | Local Marketplace</title>
+    <link rel="stylesheet" href="css/dashboard-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/dashboard-styles.css">
+</head>
+
+<body class="dashboard-body">
+    <nav class="navbar dashboard-nav">
+        <div class="container">
+            <h1 class="logo" onclick="window.location.href='index.html'" style="cursor: pointer;">
+                <span class="logo-icon"><i class="fas fa-shopping-bag"></i></span>
+                Local<span>Market</span>
+            </h1>
+            <div class="nav-links">
+                <span id="shopNameDisplay" class="shop-name-badge">Loading Shop...</span>
+                <a href="index.html">Malonda</a>
+                <button id="logoutBtn" class="btn-logout">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container dashboard-main">
+        <header class="dashboard-header">
+            <div>
+                <h2>Katundu <span>Wanu</span></h2>
+                <p>Pangani chilichonse mukufuna ,Mwafiika Mudzi mwanu.</p>
+            </div>
+            <div class="status-toggle">
+                <label for="activeStatusToggle" class="toggle-label">Muwayimbila foni akasitomala pompano?</label>
+                <label class="switch">
+                    <input type="checkbox" id="activeStatusToggle">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            <button id="openAddModal" class="btn-primary">Kuonjezera Katundu</button>
+        </header>
+
+        <section class="inventory-section">
+            <div id="productStats" class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-label">katundu Wanu Wakwana</span>
+                    <span id="totalProducts" class="stat-value">0</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Akufuna Katundu wanu akwana</span>
+                    <span id="totalOrders" class="stat-value">0</span>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <table class="product-table">
+                    <thead>
+                        <tr>
+                            <th>Katundu</th>
+                            <th>Mtengo</th>
+                            <th>Stock Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="dashboardProductGrid">
+                        <!-- Products will be loaded here -->
+                        <tr>
+                            <td colspan="4" class="loader">Loading your workspace...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="orders-section">
+            <header class="dashboard-header">
+                <div>
+                    <h2>Recent <span>Orders</span></h2>
+                    <p>Amene akufuna katundu wanu pompano.</p>
+                </div>
+            </header>
+            <div class="table-container">
+                <table class="product-table">
+                    <thead>
+                        <tr>
+                            <th>Katundu</th>
+                            <th>Customer Phone</th>
+                            <th>Order Date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="dashboardOrderGrid">
+                        <tr>
+                            <td colspan="4" class="loader">Loading orders...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal for Add/Edit Product -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Add New Product</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <form id="productForm" class="modal-form">
+                <input type="hidden" id="productId">
+                <div class="form-group">
+                    <label for="name">Dzina la katundu</label>
+                    <input type="text" id="name" placeholder="e.g. Mandasi, Tomato, bags, Laptop" required>
+                </div>
+                <div class="form-group">
+                    <label for="price">Mtengo Wake</label>
+                    <input type="number" id="price" step="0.01" placeholder="0.00" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Mufotokozeni Katundu wanu</label>
+                    <textarea id="description" placeholder="fotokozani pano..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="image">Chithunzi Cha Katundu Wanu</label>
+                    <input type="file" id="image" accept="image/*">
+                    <small class="form-help">Sankhani Chithunzi Chowoneka Bho.</small>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-secondary close-modal">Basi</button>
+                    <button type="submit" id="saveProductBtn" class="btn-submit">Onjezelani</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+
+</html>
