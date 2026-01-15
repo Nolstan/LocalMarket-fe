@@ -48,7 +48,7 @@ loginForm.addEventListener('submit', async (e) => {
         }
     } catch (error) {
         console.error('Login error:', error);
-        loginMessage.innerHTML = `<div class="error"> Connection error. Is the server running?</div>`;
+        loginMessage.innerHTML = `<div class="error"> Netiweki Itha kukhala kuti ikuvuta. </div>`;
         submitBtn.innerText = originalText;
         submitBtn.disabled = false;
     }
